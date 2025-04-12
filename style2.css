@@ -156,16 +156,17 @@ button a{
 @media (max-width:767px){
     body{
         font-size: small;
-        margin-left:10px;
+        margin:10px;
+        padding:5px;
     }
     nav{
         display: flex;
         font-size: 10px;
         margin-bottom: 2px;
     }
+    
     nav ul{
         flex-direction: column;
-
     }
     nav ul li a{
         font-size: 12px;
