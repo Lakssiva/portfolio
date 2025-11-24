@@ -1,106 +1,673 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style2.css">
-    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"rel="stylesheet">
-</head>
-<body>
-    <header>
-        <nav>
-            <h3>Lakshmipriya&nbsp;<span style="color: #00ffee;">Sivashanmugam</span></h3>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#edu">Education</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#project">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header><br>
-    <div class="me"id="home">
-        <h2>Hi,&nbsp;It's <span style="color: #00ffee;">Lakshmipriya</span></h2>
-        <img src="me.jpeg" alt="my pic"width="200px">
-        <h3>I'm a <span style="color: #00ffee;">fullstack developer</span></h3>
-        <p>A lifelong learner, constantly seeking growth and new horizons.My journey in tech started with a curiosity for how websites work, and it’s evolved into a deep love for building full-stack applications.</p>
-        <a href="https://github.com/Lakssiva"><i class='bx bxl-github'></i></a>
-        <a href="https://www.linkedin.com/in/lakshmipriya-sivashanmugam-bba679307"><i class='bx bxl-linkedin'></i></a>
-        <a href="mailto:kslakshmipriya13@gmail.com"><i class='bx bxl-gmail'></i></a>
-    </div>
-    <div class="education"id="edu">
-        <h2>Education</h2>
-        <div class="high-school">
-            <h3>Higher Secondary</h3>
-            <p>  Silver Jubilee Matriculation Higher Secondary School Mayiladuthurai, that's where I got my high school hustle on. 🎓 </p>
-            <p>2023</p>
-        </div><br> 
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Lakshmipriya Portfolio</title>
 
-        <div class="high-school">
-            <h3>College</h3>
-            <p>St. Josephs College of Engineering in Chennai is where I leveled up my engineering game. 😎</p>
-            <p>2027</p>
-        </div><br>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
 
-        <div class="internship">
-            <h3>Internship</h3>
-            <p>Still lookin' for an internship😇 to show my skills and to learn many things!</p>
-            <p>2027</p>
-        </div>
-    </div>
-    <div class="skills"id="skills">
-        <h2>Skills</h2>
-        <p>Here is the technologies I'm proficient in.</p><br>
-        <div class="frontend">
-            <h3>Frontend</h3>
-            <i class='bx bxl-html5'><p>HTML</p></i><br>
-            <i class='bx bxl-css3'><p>CSS</p></i><br>
-            <i class='bx bxl-javascript'><p>JS</p></i><br>
-            <i class='bx bxl-bootstrap'><p>Bootstrap</p></i>
-        </div><br>
-        <div class="backend"id="backend">
-            <h3>Backend</h3>
-            <i class='bx bxl-nodejs'><p>NodeJS(exploring)</p></i>
-        </div><br>
-        <div class="other">
-            <h3>Other</h3>
-            <i class='bx bxl-python'><p>Python</p></i><br>
-            <i class='bx bxl-java' ><p>Java(beginner)</p></i><br>
-            <i class='bx bxl-git'><p>Git</p></i><br>
-            <i class='bx bxl-figma'><p>Figma</p></i>
-        </div>
-    </div>
-    <div class="projects"id="project">
-        <h2>Projects</h2>
-        <h4>1.Student Record Management System (Coming Soon)</h4>
-        <h5 style="display: inline;"><u>Tech Stack:</u></h5>
-        <p>Node.js, MongoDB</p>
-            <h4 style="text-align: start;"><u>Features:</u></h4> 
+    <style>
+      :root {
+        --bg: #070708;
+        --card: #0b0b0c;
+        --muted: #cfcfcf;
+        --accent: #00ffee;
+        --accent-50: rgba(0, 238, 238, 0.18);
+        --glass: rgba(255, 255, 255, 0.02);
+        --radius: 18px;
+        --max-w: 1100px;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html,
+      body {
+        height: 100%;
+      }
+      body {
+        font-family: "Poppins", sans-serif;
+        background: linear-gradient(180deg, #050506 0%, #0a0a0b 100%);
+        color: #fff;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        line-height: 1.5;
+        overflow-x: hidden;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      .container {
+        width: 90%;
+        max-width: var(--max-w);
+        margin: 0 auto;
+      }
+
+      nav {
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        height: 68px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(
+          180deg,
+          rgba(0, 0, 0, 0.35),
+          rgba(0, 0, 0, 0.15)
+        );
+        backdrop-filter: blur(6px);
+        z-index: 50;
+        border-bottom: 1px solid rgba(0, 238, 238, 0.06);
+      }
+      nav .nav-inner {
+        width: 90%;
+        max-width: var(--max-w);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      nav h3 {
+        font-weight: 600;
+        color: var(--accent);
+        letter-spacing: 0.2px;
+      }
+      nav h3 span {
+        color: #fff;
+        font-weight: 400;
+        margin-left: 6px;
+      }
+      nav ul {
+        list-style: none;
+        display: flex;
+        gap: 18px;
+        align-items: center;
+      }
+      nav ul li a {
+        color: #eaeaea;
+        padding: 8px 10px;
+        border-radius: 8px;
+        font-weight: 500;
+        transition: all 0.18s ease;
+      }
+      nav ul li a:hover {
+        color: var(--accent);
+        box-shadow: 0 6px 18px var(--accent-50);
+      }
+
+      header.hero {
+        min-height: 100vh; 
+        display: flex;
+        align-items: center;
+        padding-top: 80px; 
+      }
+      .hero-inner {
+        display: flex;
+        gap: 36px;
+        align-items: center;
+        width: 100%;
+        max-width: var(--max-w);
+        margin: 0 auto;
+        padding: 28px 18px;
+      }
+      .hero-left {
+        flex: 1;
+        padding-right: 8px;
+      }
+      .hero-left h1 {
+        font-size: 40px;
+        line-height: 1;
+        color: var(--accent);
+        font-weight: 700;
+      }
+      .hero-left h2 {
+        font-size: 22px;
+        color: #fff;
+        font-weight: 600;
+        margin-top: 6px;
+      }
+      .hero-left p {
+        margin-top: 18px;
+        color: var(--muted);
+        max-width: 58ch;
+        font-size: 15px;
+      }
+      .socials {
+        margin-top: 18px;
+        display: flex;
+        gap: 14px;
+        align-items: center;
+      }
+      .socials a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 44px;
+        height: 44px;
+        border-radius: 10px;
+        border: 1px solid rgba(0, 238, 238, 0.08);
+        color: var(--accent);
+        font-size: 20px;
+        transition: all 0.18s ease;
+        background: linear-gradient(
+          180deg,
+          rgba(0, 238, 238, 0.02),
+          transparent
+        );
+      }
+      .socials a:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 10px 28px rgba(0, 238, 238, 0.12);
+        color: #fff;
+      }
+
+      .hero-right {
+        width: 320px;
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .profile {
+        width: 320px;
+        height: 320px;
+        border-radius: 28px;
+        overflow: hidden;
+        border: 4px solid rgba(0, 238, 238, 0.12);
+        background: linear-gradient(
+          180deg,
+          rgba(0, 0, 0, 0.3),
+          rgba(0, 0, 0, 0.4)
+        );
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 20px 60px rgba(0, 238, 238, 0.06),
+          0 6px 18px rgba(0, 0, 0, 0.6);
+        position: relative;
+      }
+      .profile img {
+        width: 100%;
+        height: 100%;
+        display: block;
+      }
+      .profile::after {
+        content: "";
+        position: absolute;
+        inset: -8px;
+        border-radius: 100%;
+        box-shadow: 0 0 60px rgba(0, 238, 238, 0.06),
+          inset 0 0 18px rgba(0, 238, 238, 0.03);
+        pointer-events: none;
+      }
+
+      main section {
+        padding: 70px 0;
+      }
+      .section-title {
+        display: block;
+        font-size: 22px;
+        color: var(--accent);
+        text-align: center;
+        margin-bottom: 18px;
+        font-weight: 700;
+        text-shadow: 0 0 12px rgba(0, 238, 238, 0.06);
+      }
+
+      .edu-grid {
+        display: flex;
+        gap: 18px;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: flex-start;
+        margin-top: 20px;
+      }
+      .edu-card {
+        width: 300px;
+        background: var(--card);
+        border-radius: 12px;
+        padding: 18px;
+        border: 2px solid rgba(0, 238, 238, 0.06);
+        text-align: center;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+      }
+      .edu-card h3 {
+        color: #fff;
+        margin-bottom: 8px;
+      }
+      .edu-card p {
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+        margin-top: 18px;
+      }
+      .skill-col {
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.01),
+          transparent
+        );
+        padding: 18px;
+        border-radius: 12px;
+        border: 1px solid rgba(0, 238, 238, 0.04);
+      }
+      .skill-col h3 {
+        color: var(--accent);
+        margin-bottom: 12px;
+        text-align: left;
+      }
+      .skill-item {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 10px;
+        border-radius: 8px;
+        transition: all 0.18s ease;
+      }
+      .skill-item i {
+        min-width: 36px;
+        min-height: 36px;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(0, 238, 238, 0.03);
+        color: var(--accent);
+        font-size: 20px;
+        border: 1px solid rgba(0, 238, 238, 0.06);
+      }
+      .skill-item span {
+        color: #fff;
+        font-weight: 500;
+      }
+      .skill-item p {
+        color: var(--muted);
+        font-size: 13px;
+        margin-top: 6px;
+      }
+
+      .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 18px;
+        margin-top: 18px;
+      }
+      .proj-card {
+        background: linear-gradient(180deg, #060607, #0c0c0d);
+        padding: 18px;
+        border-radius: 12px;
+        border: 1px solid rgba(0, 238, 238, 0.04);
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+        transition: all 0.22s ease;
+        position: relative;
+        overflow: hidden;
+      }
+      .proj-card::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          120deg,
+          rgba(0, 238, 238, 0.02),
+          transparent 30%
+        );
+        opacity: 0;
+        transition: all 0.22s ease;
+      }
+      .proj-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 30px 80px rgba(0, 238, 238, 0.12);
+      }
+      .proj-card:hover::before {
+        opacity: 1;
+      }
+      .proj-card h4 {
+        color: var(--accent);
+        margin-bottom: 8px;
+      }
+      .proj-card p {
+        color: var(--muted);
+        font-size: 14px;
+      }
+      .proj-tech {
+        margin-top: 12px;
+        color: #bfe;
+        font-size: 13px;
+        font-weight: 600;
+      }
+
+      .contact-wrap {
+        max-width: 880px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+      }
+      .contact-form {
+        width: 100%;
+        background: linear-gradient(180deg, #080808, #0b0b0c);
+        padding: 22px;
+        border-radius: 12px;
+        border: 1px solid rgba(0, 238, 238, 0.06);
+      }
+      .contact-form .row {
+        display: flex;
+        gap: 12px;
+      }
+      .contact-form input[type="text"],
+      .contact-form input[type="email"],
+      .contact-form textarea {
+        width: 100%;
+        padding: 12px;
+        border-radius: 10px;
+        border: 1px solid rgba(0, 238, 238, 0.14);
+        background: transparent;
+        color: #fff;
+        font-size: 14px;
+        outline: none;
+        transition: all 0.15s ease;
+      }
+      .contact-form input:focus,
+      .contact-form textarea:focus {
+        border-color: var(--accent);
+        box-shadow: 0 8px 28px rgba(0, 238, 238, 0.06);
+      }
+      .contact-form textarea {
+        resize: vertical;
+        min-height: 120px;
+      }
+      .btn {
+        display: inline-block;
+        padding: 12px 20px;
+        border-radius: 10px;
+        background: linear-gradient(90deg, var(--accent), #60fff0);
+        color: #071017;
+        font-weight: 700;
+        border: none;
+        cursor: pointer;
+        margin-top: 12px;
+        box-shadow: 0 12px 42px rgba(0, 238, 238, 0.12);
+        transition: transform 0.12s ease, box-shadow 0.12s ease;
+      }
+      .btn:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 30px 80px rgba(0, 238, 238, 0.18);
+      }
+
+      footer {
+        padding: 28px 0;
+        color: #9aa;
+        text-align: center;
+        border-top: 1px solid rgba(0, 238, 238, 0.04);
+        margin-top: 28px;
+      }
+
+      @media (max-width: 1000px) {
+        .skills-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .hero-right {
+          width: 260px;
+        }
+        .profile {
+          width: 260px;
+          height: 260px;
+          border-radius: 18px;
+        }
+      }
+      @media (max-width: 720px) {
+        nav ul {
+          display: none;
+        }
+        .hero-inner {
+          flex-direction: column-reverse;
+          padding: 18px;
+        }
+        .hero-right {
+          width: 200px;
+        }
+        .profile {
+          width: 200px;
+          height: 200px;
+        }
+        .skills-grid {
+          grid-template-columns: 1fr;
+        }
+        .edu-grid {
+          flex-direction: column;
+          align-items: center;
+        }
+        .contact-wrap {
+          padding: 0 12px;
+        }
+      }
+
+      .muted {
+        color: var(--muted);
+      }
+      .small {
+        font-size: 13px;
+        color: var(--muted);
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="nav-inner container">
+        <h3>Lakshmipriya <span>Sivashanmugam</span></h3>
         <ul>
-            <li>CRUD (Create, Read, Update, Delete) operations for student data.</li>
-            <li>Efficient management of student records.</li>
-            <li>User-friendly interface for easy navigation.</li>
-        </ul><br>
-        <h4>2.Campus Navigation Website</h4>
-        <h5 style="display: inline;"><u>Tech Stack:</u></h5>
-        <p> HTML, CSS, JavaScript</p>
-            <h4 style="text-align: start;"><u>Features:</u></h4> 
-        <ul>
-            <li> QR code-based navigation for easy access.</li>
-            <li>Intuitive and user-friendly interface.</li>
-            <li>Provides directions and information within the campus.</li>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#edu">Education</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#project">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
-        <div class="contact"id="contact">
-            <h2>Contact</h2>
-            <form action="">
-                <input type="text" placeholder="Full-name"><br>
-                <input type="email"placeholder="Email"><br>
-                <input type="text"placeholder="Phone number"><br>
-                <textarea name="" id=""rows="5"placeholder="Your message"></textarea><br>
-                <button><a href="mailto:kslakshmipriya13@gmail.com">Send Message</a></button
-            </form>
+      </div>
+    </nav>
+
+    <header class="hero" id="home" aria-label="Hero section">
+      <div class="hero-inner container">
+        <div class="hero-left">
+          <h1><span>Lakshmipriya</span></h1>
+          <h2><span>Fullstack Developer</span></h2>
+          <p>
+            A self-taught Full-stack Developer passionate about designing
+            beautiful websites and crafting digital experiences. My journey in
+            tech started with a curiosity of how websites work and a
+            determination to create simple and elegant websites which later
+            evolved into a deep love for building Full-stack applications.
+          </p>
+
+          <div class="socials" aria-hidden="false">
+            <a href="https://github.com/Lakssiva" aria-label="GitHub"
+              ><i class="bx bxl-github"></i
+            ></a>
+            <a
+              href="https://www.linkedin.com/in/lakshmipriya-sivashanmugam-bba679307"
+              aria-label="LinkedIn"
+              ><i class="bx bxl-linkedin"></i
+            ></a>
+            <a href="mailto:kslakshmipriya13@gmail.com" aria-label="Email"
+              ><i class="bx bxl-gmail"></i
+            ></a>
+          </div>
         </div>
-    </div>
-</body>
+
+        <div class="hero-right">
+          <div
+            class="profile"
+            role="img"
+            aria-label="Lakshmipriya profile picture"
+          >
+            <img src="me.jpeg" alt="Lakshmipriya profile picture" />
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section id="edu" class="container">
+        <span class="section-title">Education</span>
+        <div class="edu-grid" aria-hidden="false">
+          <div class="edu-card">
+            <h3>Higher Secondary</h3>
+            <p>
+              Silver Jubilee Matriculation Higher Secondary School
+              Mayiladuthurai, that's where I got my high school hustle on. 🎓
+            </p>
+            <p class="small">2023</p>
+          </div>
+
+          <div class="edu-card">
+            <h3>College</h3>
+            <p>
+              St.Josephs College of Engineering in Chennai is where I leveled up
+              my engineering game. 😎
+            </p>
+            <p class="small">2027</p>
+          </div>
+
+          <div class="edu-card">
+            <h3>Internship</h3>
+            <p>I did my SDE intern at PingServ Solutions LLP 😇</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="skills" class="container">
+        <span class="section-title">Skills</span>
+        <p class="small muted" style="text-align: center; margin-top: 6px">
+          Here are the technologies I'm proficient in.
+        </p>
+
+        <div class="skills-grid" role="list">
+          <div class="skill-col" role="listitem">
+            <h3>Frontend</h3>
+            <div class="skill-item">
+              <i class="bx bxl-html5"></i><span>HTML</span>
+            </div>
+            <div class="skill-item">
+              <i class="bx bxl-css3"></i><span>CSS</span>
+            </div>
+            <div class="skill-item">
+              <i class="bx bxl-javascript"></i><span>JavaScript</span>
+            </div>
+            <div class="skill-item">
+              <i class="bx bxl-bootstrap"></i><span>Bootstrap</span>
+            </div>
+          </div>
+
+          <div class="skill-col" role="listitem">
+            <h3>Backend</h3>
+            <div class="skill-item">
+              <i class="bx bxl-nodejs"></i><span>NodeJS (exploring)</span>
+            </div>
+          </div>
+
+          <div class="skill-col" role="listitem">
+            <h3>Other</h3>
+            <div class="skill-item">
+              <i class="bx bxl-python"></i><span>Python</span>
+            </div>
+            <div class="skill-item">
+              <i class="bx bxl-java"></i><span>Java (beginner)</span>
+            </div>
+            <div class="skill-item">
+              <i class="bx bxl-git"></i><span>Git</span>
+            </div>
+            <div class="skill-item">
+              <i class="bx bxl-figma"></i><span>Figma</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="project" class="container">
+        <span class="section-title">Projects</span>
+
+        <div class="projects-grid" role="list">
+          <article class="proj-card" role="listitem">
+            <h4>1. Student Record Management System (Coming Soon)</h4>
+            <p>Node.js, MongoDB</p>
+            <p class="proj-tech">
+              <strong>Features:</strong> CRUD operations for student data,
+              efficient management of records, user-friendly interface.
+            </p>
+          </article>
+
+          <article class="proj-card" role="listitem">
+            <h4>2. Campus Navigation Website</h4>
+            <p>HTML, CSS, JavaScript</p>
+            <p class="proj-tech">
+              <strong>Features:</strong> QR-based navigation, intuitive UI, easy
+              campus directions.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="contact" class="container">
+        <span class="section-title">Contact</span>
+
+        <div class="contact-wrap" aria-hidden="false">
+          <form
+            class="contact-form"
+            action="mailto:kslakshmipriya13@gmail.com"
+            method="get"
+            enctype="text/plain"
+            onsubmit="return false;"
+          >
+            <div class="row" style="margin-bottom: 12px">
+              <input type="text" placeholder="Full Name" required />
+              <input type="email" placeholder="Email" required />
+            </div>
+            <div style="margin-bottom: 12px">
+              <input type="text" placeholder="Phone Number" />
+            </div>
+            <div>
+              <textarea placeholder="Your message" rows="5"></textarea>
+            </div>
+            <div>
+              <button
+                class="btn"
+                type="button"
+                onclick="location.href='mailto:kslakshmipriya13@gmail.com'"
+              >
+                Send Message
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer>© 2025 Lakshmipriya — All Rights Reserved</footer>
+
+    <script>
+      document.querySelectorAll('nav a[href^="#"]').forEach((a) => {
+        a.addEventListener("click", (e) => {
+          e.preventDefault();
+          const t = document.querySelector(a.getAttribute("href"));
+          if (t) t.scrollIntoView({ behavior: "smooth", block: "start" });
+        });
+      });
+    </script>
+  </body>
 </html>
